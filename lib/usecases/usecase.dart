@@ -10,7 +10,7 @@ import 'package:zooper_flutter_ddd_domain/zooper_flutter_ddd_domain.dart';
 /// in `Dart` and `MUST NOT` include any `Flutter` code whatsoever. The [UseCase] is a part
 /// of the `Domain` module of the application in the `Clean Architecture`.
 abstract class UseCase<TResponse, TRequest> {
-  Future<Result<TResponse>> call(TRequest? params);
+  Future<Result<TResponse>> call(TRequest params);
 }
 
 abstract class SyncUseCase<TResponse, TRequest> {

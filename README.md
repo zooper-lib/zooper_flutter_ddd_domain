@@ -1,39 +1,42 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Zooper Flutter DDD Domain
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+This project aims to provide helper classes which should help you implementing the Domain Driven Design into your flutter application.
+Reference this package from your Domain project.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+# Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Add this line into your `pubspec.yaml`:
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+``` yaml
+zooper_flutter_ddd_domain: <version>
 ```
 
-## Additional information
+And in your class:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+``` dart
+import 'package:zooper_flutter_ddd_domain/zooper_flutter_ddd_domain.dart';
+```
+
+# Usage
+
+## UseCases
+
+The UseCases come with an async and an sync version of the 'call()' function. Just implement your own class and extend the appropriate UseCase.
+The 'call()' function returns an 'Result' object, which is a generic class. If you want to return something from that UseCase, you can define it when extending it:
+
+``` dart
+class TestUseCase extends UseCase<bool, Params> {
+  @override
+  Future<Result<bool>> call(Params params) async ...
+}
+```
+
+Or if you don't want to return anything, just use 'void':
+
+``` dart
+class TestUseCase extends UseCase<void, void> {
+  @override
+  Future<Result> call(void params) async {
+    return Result.success();
+  }
+```
