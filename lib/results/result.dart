@@ -12,7 +12,15 @@ class Result<TData> {
     return Result._(data, null);
   }
 
-  factory Result.failure(List<Failure> failures) {
+  factory Result.success() {
+    return Result._(null, null);
+  }
+
+  factory Result.failure(Failure failure) {
+    return Result._(null, [failure]);
+  }
+
+  factory Result.failures(List<Failure> failures) {
     return Result._(null, failures);
   }
 
