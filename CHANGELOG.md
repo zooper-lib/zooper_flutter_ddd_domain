@@ -4,4 +4,8 @@
 
 # 1.0.1
 
-- Added ability to send events with the mediator
+- Added ability to send events with the `Mediator`
+
+# 1.0.2
+
+- Removed message property from `Failure`
