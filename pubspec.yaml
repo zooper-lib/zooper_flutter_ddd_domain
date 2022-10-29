@@ -1,6 +1,6 @@
 name: zooper_flutter_ddd_domain
 description: A core project for Domain Driven Design (DDD) on the domain side
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/zooper-lib
 
 environment:
