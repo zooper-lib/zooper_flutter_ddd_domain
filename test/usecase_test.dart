@@ -31,7 +31,7 @@ class CompareStringsUseCase extends UseCase<bool, CompareStringsUseCaseParams> {
   @override
   Future<Result<bool>> call(CompareStringsUseCaseParams params) async {
     if (params.firstString == null || params.secondString == null) {
-      return Result.failure(NullFailure('Parameter must not be null'));
+      return Result.failure(NullFailure());
     }
 
     var equals = params.firstString == params.secondString;
@@ -46,6 +46,4 @@ class CompareStringsUseCaseParams {
   CompareStringsUseCaseParams(this.firstString, this.secondString);
 }
 
-class NullFailure extends Failure {
-  NullFailure(super.message);
-}
+class NullFailure extends Failure {}
