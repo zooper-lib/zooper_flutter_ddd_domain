@@ -9,3 +9,7 @@
 # 1.0.2
 
 - Removed message property from `Failure`
+
+# 1.0.3
+
+- Made `Mediator` an abstract class
