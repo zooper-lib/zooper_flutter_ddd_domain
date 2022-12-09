@@ -25,7 +25,7 @@ The UseCases come with an async and an sync version of the `call()` function. Ju
 The `call()` function returns an `Result` object, which is a generic class. If you want to return something from that UseCase, you can define it when extending it:
 
 ``` dart
-class TestUseCase extends UseCase<bool, Params> {
+class TestUseCase extends AsyncUseCase<bool, Params> {
   @override
   Future<Result<bool>> call(Params params) async ...
 }
@@ -34,12 +34,14 @@ class TestUseCase extends UseCase<bool, Params> {
 Or if you don't want to return anything, just use `void`:
 
 ``` dart
-class TestUseCase extends UseCase<void, void> {
+class TestUseCase extends AsyncUseCase<void, void> {
   @override
   Future<Result> call(void params) async {
     return Result.success();
   }
 ```
+
+The `AsyncUseCase` and `SyncUseCase` classes are just helpers to use the `UseCase` as it is meant to be, but you can also just extend from `UseCase` directly
 
 ## Events
 
