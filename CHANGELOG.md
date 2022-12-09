@@ -13,3 +13,7 @@
 # 1.0.3
 
 - Made `Mediator` an abstract class
+
+# 1.0.4
+
+- Split `UseCase` into `AsyncUseCase` and `SyncUseCase`
