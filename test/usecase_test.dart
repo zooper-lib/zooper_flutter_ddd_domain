@@ -27,7 +27,7 @@ void main() async {
   });
 }
 
-class CompareStringsUseCase extends UseCase<bool, CompareStringsUseCaseParams> {
+class CompareStringsUseCase extends AsyncUseCase<bool, CompareStringsUseCaseParams> {
   @override
   Future<Result<bool>> call(CompareStringsUseCaseParams params) async {
     if (params.firstString == null || params.secondString == null) {
